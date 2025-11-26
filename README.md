@@ -8,14 +8,14 @@ HTML / CSS / JavaScript – Frontend UI
 
 TheMealDB Public API (Test Key: 1)
 
-This project allows users to search meals, explore categories, view random recipes, and open detailed recipe instructions.
+This project allows users to search meals, explore categories, view random recipes, and view full recipe details with ingredients and instructions.
 
 📁 Project Structure
 Meal-Explorer/
-   ├── BackEnd/          # Spring Boot REST API
-   ├── FrontEnd/         # HTML + CSS + JS UI
-   ├── README.md
-   └── .gitignore
+ ├── Backend/          # Spring Boot REST API
+ ├── Frontend/         # HTML + CSS + JavaScript UI
+ ├── README.md
+ └── .gitignore
 
 🚀 How to Run the Project
 1️⃣ Run Backend (Spring Boot)
@@ -27,79 +27,81 @@ Maven installed
 
 Commands
 
-Open terminal:
+Open a terminal inside the Backend folder:
 
-cd BackEnd
+cd Backend
 mvn clean install
 mvn spring-boot:run
 
-Default Backend URL:
+Backend runs at:
 http://localhost:8080
 
+🔗 Backend API Endpoints (Correct)
+Purpose	Endpoint
+Search meals by name	GET /api/search/{name}
+Get meals by category	GET /api/category/{name}
+Get meal details	GET /api/meal/{id}
+Get random meal	GET /api/random
+Get all categories	GET /api/categories
 
-Your backend exposes simplified REST endpoints like:
-
-GET /api/meals/search?q=<meal>
-GET /api/meals/random
-GET /api/meals/category/<category>
-GET /api/meals/<id>
-
-
-Backend internally calls:
+The backend internally consumes:
 
 https://www.themealdb.com/api/json/v1/1/
 
+Caching Implemented
 
-Caching:
 ✔ In-memory cache
 ✔ Cache expiry
-✔ Improves performance for repeated API calls
+✔ Performance optimized
 
 2️⃣ Run Frontend (HTML + CSS + JS)
-Option A — Directly open the file
+Option A — Direct Run
 
-Just double-click:
+Simply open:
 
-FrontEnd/index.html
+Frontend/index.html
 
-Option B — VS Code Live Server
+Option B — Run with Live Server (Recommended)
 
-Right-click index.html →
+Open the Frontend folder in VS Code
 
-Open with Live Server
+Install the Live Server extension
 
-Frontend will automatically call backend APIs on:
+Right-click index.html
 
+Select Open with Live Server
+
+Frontend automatically calls backend using:
 http://localhost:8080/api/...
 
 ✨ Features Implemented
 ✔ Search Meals
 
-Enter a meal name and fetch results.
+Search meals by name using a search bar.
 
 ✔ Browse Categories
 
-List categories such as Chicken, Seafood, Vegetarian, etc.
+View meals categorized by type (Chicken, Vegan, Seafood, etc.)
 
 ✔ Random Meal
 
-"I'm Feeling Hungry" button → shows a random recipe.
+An "I'm Feeling Hungry" button fetches a random recipe.
 
 ✔ Recipe Details Page
 
-Shows:
+Displays:
 
 Ingredients
 
 Instructions
 
-Thumbnail
+Thumbnail image
 
-YouTube video link
+YouTube tutorial link
 
 ✔ Responsive UI
 
-Works on both desktop and mobile.
+Optimized for mobile and desktop screens.
 
 🛠️ Tech Stack
 Backend
@@ -110,7 +112,7 @@ Spring Boot
 
 Maven
 
-RestTemplate / WebClient
+RestTemplate
 
 In-memory caching
 
@@ -120,24 +122,26 @@ HTML
 
 CSS
 
-JavaScript (Vanilla)
+JavaScript (Vanilla JS)
 
 📦 Submission Notes
 
 This project includes:
 
-Full source code (backend + frontend)
+Complete source code (Backend + Frontend)
 
-README with run instructions
+Fully functional REST API
+
+Working frontend UI
 
 Clean folder structure
 
-REST-compliant endpoints
-
-Local environment setup
+README with detailed setup instructions
 
 Public GitHub repository as required
 
-👨‍💻 Developed by
+Endpoints fully tested locally
+
+👨‍💻 Developed By
 
 Sahil Salunkhe
