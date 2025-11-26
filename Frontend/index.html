@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TheMealDB Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-title">🍽️ TheMealDB Explorer</div>
+    </nav>
+
+    <div id="loader"></div>
+
+    <div class="container">
+
+        <h1>Discover Meals</h1>
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search meals...">
+            <button onclick="searchMeals()">Search</button>
+        </div>
+
+        <button class="random-btn" onclick="getRandomMeal()">I'm Feeling Hungry 🍽️</button>
+        <button class="random-btn" onclick="reopenLastRandomMeal()">Reopen Last Meal</button>
+
+        <div class="category-scroll" id="categoryScroll"></div>
+
+        <h2>Results</h2>
+
+        <div id="results" class="grid"></div>
+
+        <div class="pagination-wrapper">
+            <ul id="pagination" class="pagination"></ul>
+        </div>
+
+    </div>
+
+    <div id="mealModal" class="modal">
+        <div class="modal-content">
+    
+            <span class="modal-close" onclick="closeModal()">×</span>
+    
+            <img id="modalImage" class="modal-image">
+    
+            <div class="modal-header" id="modalTitle"></div>
+    
+            <div class="modal-body">
+                <p class="detail-label">Category:</p>
+                <p class="detail-text" id="modalCategory"></p>
+    
+                <p class="detail-label">Area:</p>
+                <p class="detail-text" id="modalArea"></p>
+    
+                <p class="detail-label">Instructions:</p>
+                <p class="detail-text" id="modalInstructions"></p>
+    
+                <p class="detail-label">Ingredients:</p>
+                <ul class="ingredients-list" id="modalIngredients"></ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        Made with ❤️ by Sahil | Powered by TheMealDB
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
